@@ -7,9 +7,8 @@ resulting from parsed rules.
 What are Sigma Rules?
 *********************
 
-Sigma is a generic, open-ended, and extensible signature format for detection rules. A Sigma rule
-describes a suspicious event or pattern in a structured way using YAML. pySigma provides tools to
-parse, transform, and convert these rules into backend-specific query formats.
+Sigma is a generic, open-ended, and extensible signature format for detection rules. Learn more on
+the `official Sigma website <https://sigmahq.io>`_.
 
 A minimal Sigma rule looks like this:
 

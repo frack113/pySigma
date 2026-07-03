@@ -98,6 +98,7 @@ With a Custom YAML Pipeline
 Next Steps
 **********
 
+* `Sigma Official Site <https://sigmahq.io>`_ — Learn about Sigma rules and detection concepts
 * :doc:`YAML_Pipeline_Tutorial` — Learn how to create your own YAML pipelines
 * :doc:`Sigma_Rules` — Understand Sigma rule structure
 * :doc:`Processing_Pipelines` — Complete reference for transformations
