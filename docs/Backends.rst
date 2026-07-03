@@ -4,13 +4,40 @@ Backends
 Backends are responsible for conversion of Sigma rules into a target query languages. Mainly, they
 have to convert the conditions of the Sigma rules with their reference to detection items into
 equivalent query. Backends should not be used to handle log source types or data models, e.g. field
-naming or differences in value representation. Use ::doc:`Processing_Pipelines` instead.
+naming or differences in value representation. Use :doc:`Processing_Pipelines` instead.
 
 To implement a conversion for a new query language derive an appropriate backend base class from
 below and override properties or methods as required.
 
 Use the `Cookiecutter template <https://github.com/SigmaHQ/cookiecutter-pySigma-backend>`_ to start a
 new backend.
+
+Example: Converting a Rule to Splunk
+************************************
+
+.. code-block:: python
+
+   from sigma.collection import SigmaCollection
+   from sigma.backends.splunk import SplunkQueryBackend
+   from sigma.pipelines.sysmon import sysmon_pipeline
+
+   # Load rules
+   rules = SigmaCollection.from_yaml_file("rules.yml")
+
+   # Create backend with pipeline
+   pipeline = sysmon_pipeline()
+   backend = SplunkQueryBackend(pipeline=pipeline)
+
+   # Convert
+   queries = backend.convert(rules)
+   for query in queries:
+       print(query)
+
+Available Backends
+******************
+
+See the `pySigma backends repository <https://github.com/SigmaHQ/pySigma-backends>`_ for a
+complete list of official backends.
 
 Conventions
 ***********

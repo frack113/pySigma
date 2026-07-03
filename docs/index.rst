@@ -23,6 +23,7 @@ pySigma Documentation
 
    Plugin_System
    Breaking_Changes
+   Changelog
 
 Overview
 ********
