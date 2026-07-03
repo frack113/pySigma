@@ -1,0 +1,39 @@
+/* Custom styles for pySigma documentation */
+
+/* Improve code block readability */
+.highlight {
+    border-radius: 4px;
+}
+
+/* Better table styling */
+table.docutils {
+    border-collapse: collapse;
+}
+
+table.docutils th {
+    background-color: var(--color-table-odd-cell-hover-background, #f0f0f0);
+}
+
+/* Improve sidebar readability */
+.sidebar-brand-text {
+    font-weight: 600;
+}
+
+/* Better link styling */
+a.reference.internal {
+    text-decoration: none;
+}
+
+a.reference.internal:hover {
+    text-decoration: underline;
+}
+
+/* Highlight important notes */
+.admonition.note {
+    border-left-width: 4px;
+}
+
+/* Code block line numbers */
+.highlight pre {
+    line-height: 1.5;
+}
