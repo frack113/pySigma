@@ -6,77 +6,178 @@ This cheat sheet helps you find the right transformation for common use cases.
 Field Operations
 ****************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Rename a field                          | `field_name_mapping` | `mapping: {EventID: event_id}`                   |
-| Add prefix to all fields                | `field_name_prefix`  | `prefix: "sysmon."`                               |
-| Add suffix to all fields                | `field_name_suffix`  | `suffix: "_raw"`                                  |
-| Map field A to B, C, D (OR)             | `field_name_mapping` | `mapping: {OldField: [FieldB, FieldC, FieldD]}`  |
-| Apply function to field name            | `field_name_transform` | `function: "lower"`                              |
+.. list-table::
+   :header-rows: 1
+   :widths: 35 25 40
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Rename a field
+     - ``field_name_mapping``
+     - ``mapping: {EventID: event_id}``
+   * - Add prefix to all fields
+     - ``field_name_prefix``
+     - ``prefix: "sysmon."``
+   * - Add suffix to all fields
+     - ``field_name_suffix``
+     - ``suffix: "_raw"``
+   * - Map field A to B, C, D (OR)
+     - ``field_name_mapping``
+     - ``mapping: {OldField: [FieldB, FieldC, FieldD]}``
+   * - Apply function to field name
+     - ``field_name_transform``
+     - ``function: "lower"``
 
 Value Operations
 ****************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Replace exact values                    | `map_string`         | `mapping: {True: "enabled", False: "disabled"}`  |
-| Replace with regex                      | `replace_string`     | `regex: "foo" replacement: "bar"`                |
-| Convert type (str→int, etc.)           | `convert_type`       | `target_type: "int"`                             |
-| Set specific value                      | `set_value`          | `value: "custom_value"`                          |
-| Hash a field (MD5, SHA256, etc.)       | `hashes_fields`      | `hash_algos: ["md5", "sha256"]`                  |
-| Apply case transformation               | `case`               | `case: "lower"`                                  |
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Replace exact values
+     - ``map_string``
+     - ``mapping: {True: "enabled", False: "disabled"}``
+   * - Replace with regex
+     - ``replace_string``
+     - ``regex: "foo" replacement: "bar"``
+   * - Convert type (str→int, etc.)
+     - ``convert_type``
+     - ``target_type: "int"``
+   * - Set specific value
+     - ``set_value``
+     - ``value: "custom_value"``
+   * - Hash a field (MD5, SHA256, etc.)
+     - ``hashes_fields``
+     - ``hash_algos: ["md5", "sha256"]``
+   * - Apply case transformation
+     - ``case``
+     - ``case: "lower"``
 
 Condition Operations
 ********************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Add detection condition                 | `add_condition`      | `conditions: ["selection"]`                      |
-| Change log source                       | `change_logsource`   | `logsource: {product: "windows", service: "sysmon"}` |
-| Add new field to rule                   | `add_field`          | `field: "custom_field", value: "value"`          |
-| Remove field from rule                  | `remove_field`       | `field: "unwanted_field"`                        |
-| Set field value                         | `set_field`          | `field: "event_category", value: "process"`      |
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Add detection condition
+     - ``add_condition``
+     - ``conditions: ["selection"]``
+   * - Change log source
+     - ``change_logsource``
+     - ``logsource: {product: "windows", service: "sysmon"}``
+   * - Add new field to rule
+     - ``add_field``
+     - ``field: "custom_field", value: "value"``
+   * - Remove field from rule
+     - ``remove_field``
+     - ``field: "unwanted_field"``
+   * - Set field value
+     - ``set_field``
+     - ``field: "event_category", value: "process"``
 
 State & Tracking
 ****************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Mark rule as processed                  | `set_state`          | `state: "mapped"`                                |
-| Track applied transformations           | `set_state`          | Use with `rule_conditions` to check state        |
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Mark rule as processed
+     - ``set_state``
+     - ``state: "mapped"``
+   * - Track applied transformations
+     - ``set_state``
+     - Use with ``rule_conditions`` to check state
 
 Advanced Operations
 *******************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Group multiple transformations          | `nest`               | See :doc:`YAML_Pipeline_Tutorial` for details    |
-| Apply regex to field                    | `regex`              | `regex: "pattern" field: "target_field"`         |
-| Drop detection item                     | `drop_detection_item` | `condition: {type: "field_name", field: "old_field"}` |
-| Convert hash fields                     | `hashes_fields`      | `hash_algos: ["md5"], field_prefix: "file."`     |
-| Add wildcard placeholders               | `wildcard_placeholders` | `field: "command_line"`                        |
-| Add value list placeholders             | `value_placeholders` | `field: "status_code"`                           |
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Group multiple transformations
+     - ``nest``
+     - See :doc:`YAML_Pipeline_Tutorial` for details
+   * - Apply regex to field
+     - ``regex``
+     - ``regex: "pattern" field: "target_field"``
+   * - Drop detection item
+     - ``drop_detection_item``
+     - ``condition: {type: "field_name", field: "old_field"}``
+   * - Convert hash fields
+     - ``hashes_fields``
+     - ``hash_algos: ["md5"], field_prefix: "file."``
+   * - Add wildcard placeholders
+     - ``wildcard_placeholders``
+     - ``field: "command_line"``
+   * - Add value list placeholders
+     - ``value_placeholders``
+     - ``field: "status_code"``
 
 Post-Processing Operations
 **************************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Wrap query in template                  | `simple_template`    | `template: "search {query}"`                     |
-| Custom query template                   | `template`           | See :doc:`YAML_Pipeline_Tutorial` for details    |
-| Embed query in JSON                     | `json`               | `template: '{"query": "{query}"}'`              |
-| Replace parts of query                  | `replace`            | `regex: "old" replacement: "new"`                |
-| Embed raw query                         | `embed`              | `prefix: "[", suffix: "]"`                      |
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Wrap query in template
+     - ``simple_template``
+     - ``template: "search {query}"``
+   * - Custom query template
+     - ``template``
+     - See :doc:`YAML_Pipeline_Tutorial` for details
+   * - Embed query in JSON
+     - ``json``
+     - ``template: '{"query": "{query}"}'``
+   * - Replace parts of query
+     - ``replace``
+     - ``regex: "old" replacement: "new"``
+   * - Embed raw query
+     - ``embed``
+     - ``prefix: "[", suffix: "]"``
 
 Output Finalization
 *******************
 
-| Need                                    | Transformation        | Example YAML                                      |
-|-----------------------------------------|----------------------|---------------------------------------------------|
-| Join multiple queries                   | `concat`             | `separator: " OR "`                              |
-| Template final output                   | `template`           | `template: "header\n{queries}\nfooter"`          |
-| Export as JSON                          | `json`               | `template: '{"queries": {queries}}'`            |
-| Export as YAML                          | `yaml`               | (no extra params needed)                         |
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Need
+     - Transformation
+     - Example YAML
+   * - Join multiple queries
+     - ``concat``
+     - ``separator: " OR "``
+   * - Template final output
+     - ``template``
+     - ``template: "header\n{queries}\nfooter"``
+   * - Export as JSON
+     - ``json``
+     - ``template: '{"queries": {queries}}'``
+   * - Export as YAML
+     - ``yaml``
+     - (no extra params needed)
 
 Common Recipes
 **************

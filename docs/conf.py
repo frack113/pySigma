@@ -50,7 +50,6 @@ napoleon_preprocess_types = True
 # Intersphinx mappings
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    "pyyaml": ("https://pyyaml.readthedocs.io/en/stable/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.

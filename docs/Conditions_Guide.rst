@@ -20,16 +20,37 @@ Rule conditions are evaluated once per rule. They are defined in the `rule_condi
 Available Rule Conditions
 =========================
 
-| Identifier                  | Class                              | Purpose                                      |
-|-----------------------------|------------------------------------|----------------------------------------------|
-| `logsource`                 | `LogsourceCondition`               | Match by log source (product, service, etc.) |
-| `contains_detection_item`   | `RuleContainsDetectionItemCondition` | Check if rule contains specific detection item |
-| `processing_item_applied`   | `RuleProcessingItemAppliedCondition` | Check if a transformation was already applied |
-| `processing_state`          | `RuleProcessingStateCondition`     | Check processing state set by `set_state`    |
-| `is_sigma_rule`             | `IsSigmaRuleCondition`             | Check if rule is a Sigma rule (not correlation) |
-| `is_sigma_correlation_rule` | `IsSigmaCorrelationRuleCondition`  | Check if rule is a correlation rule          |
-| `rule_attribute`            | `RuleAttributeCondition`           | Check rule attributes (title, id, etc.)      |
-| `tag`                       | `RuleTagCondition`                 | Match by Sigma tags                            |
+.. list-table::
+   :header-rows: 1
+   :widths: 25 45 30
+
+   * - Identifier
+     - Class
+     - Purpose
+   * - ``logsource``
+     - ``LogsourceCondition``
+     - Match by log source (product, service, etc.)
+   * - ``contains_detection_item``
+     - ``RuleContainsDetectionItemCondition``
+     - Check if rule contains specific detection item
+   * - ``processing_item_applied``
+     - ``RuleProcessingItemAppliedCondition``
+     - Check if a transformation was already applied
+   * - ``processing_state``
+     - ``RuleProcessingStateCondition``
+     - Check processing state set by ``set_state``
+   * - ``is_sigma_rule``
+     - ``IsSigmaRuleCondition``
+     - Check if rule is a Sigma rule (not correlation)
+   * - ``is_sigma_correlation_rule``
+     - ``IsSigmaCorrelationRuleCondition``
+     - Check if rule is a correlation rule
+   * - ``rule_attribute``
+     - ``RuleAttributeCondition``
+     - Check rule attributes (title, id, etc.)
+   * - ``tag``
+     - ``RuleTagCondition``
+     - Match by Sigma tags
 
 Rule Condition Examples
 =======================
@@ -94,14 +115,27 @@ Detection Item Conditions
 Detection item conditions are evaluated for each detection item in the rule.
 
 Available Detection Item Conditions
-====================================
+===================================
 
-| Identifier              | Class                                  | Purpose                              |
-|-------------------------|----------------------------------------|--------------------------------------|
-| `match_string`          | `MatchStringCondition`                 | Match detection item string values   |
-| `is_null`               | `IsNullCondition`                      | Check if detection item is null      |
-| `processing_item_applied` | `DetectionItemProcessingItemAppliedCondition` | Check if transformation was applied |
-| `processing_state`      | `DetectionItemProcessingStateCondition` | Check processing state               |
+.. list-table::
+   :header-rows: 1
+   :widths: 25 50 25
+
+   * - Identifier
+     - Class
+     - Purpose
+   * - ``match_string``
+     - ``MatchStringCondition``
+     - Match detection item string values
+   * - ``is_null``
+     - ``IsNullCondition``
+     - Check if detection item is null
+   * - ``processing_item_applied``
+     - ``DetectionItemProcessingItemAppliedCondition``
+     - Check if transformation was applied
+   * - ``processing_state``
+     - ``DetectionItemProcessingStateCondition``
+     - Check processing state
 
 Detection Item Condition Examples
 ==================================
@@ -134,14 +168,27 @@ Field Name Conditions
 Field name conditions are evaluated for field names in detection items.
 
 Available Field Name Conditions
-================================
+===============================
 
-| Identifier              | Class                                  | Purpose                              |
-|-------------------------|----------------------------------------|--------------------------------------|
-| `include_fields`        | `IncludeFieldCondition`                | Match specific field names           |
-| `exclude_fields`        | `ExcludeFieldCondition`                | Exclude specific field names         |
-| `processing_item_applied` | `FieldNameProcessingItemAppliedCondition` | Check if transformation was applied |
-| `processing_state`      | `FieldNameProcessingStateCondition`     | Check processing state               |
+.. list-table::
+   :header-rows: 1
+   :widths: 25 50 25
+
+   * - Identifier
+     - Class
+     - Purpose
+   * - ``include_fields``
+     - ``IncludeFieldCondition``
+     - Match specific field names
+   * - ``exclude_fields``
+     - ``ExcludeFieldCondition``
+     - Exclude specific field names
+   * - ``processing_item_applied``
+     - ``FieldNameProcessingItemAppliedCondition``
+     - Check if transformation was applied
+   * - ``processing_state``
+     - ``FieldNameProcessingStateCondition``
+     - Check processing state
 
 Field Name Condition Examples
 ==============================

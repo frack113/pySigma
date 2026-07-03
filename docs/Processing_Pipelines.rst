@@ -295,6 +295,7 @@ definitions are available:
 .. autoclass:: sigma.processing.transformations.fields.FieldFunctionTransformation
 .. autoclass:: sigma.processing.transformations.detection_item.DropDetectionItemTransformation
 .. autoclass:: sigma.processing.transformations.values.HashesFieldsDetectionItemTransformation
+   :no-index:
 .. autoclass:: sigma.processing.transformations.fields.AddFieldnameSuffixTransformation
 .. autoclass:: sigma.processing.transformations.fields.AddFieldnamePrefixTransformation
 .. autoclass:: sigma.processing.transformations.placeholder.WildcardPlaceholderTransformation

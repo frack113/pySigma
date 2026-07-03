@@ -17,17 +17,30 @@ The conversion pipeline:
 Key Classes
 ***********
 
-| Class                            | Purpose                                            |
-|----------------------------------|----------------------------------------------------|
-| `SigmaBackend`                   | Base class for all backends                        |
-| `SigmaQueryExpression`           | Base class for query expressions                   |
-| `SigmaQueryExpressionTransformer` | Transforms query expressions (e.g., to string)   |
-| `SigmaConditionTranslator`       | Translates Sigma conditions to query expressions   |
-| `SigmaRuleConverter`             | Converts parsed rules to query expressions         |
-| `SigmaDetectionConverter`        | Converts detection items to query expressions      |
-| `SigmaDetectionItemConverter`    | Converts individual detection items                |
-| `SigmaFieldMapping`              | Handles field name mappings                        |
-| `SigmaValueConverter`            | Converts values (strings, numbers, etc.)           |
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - Class
+     - Purpose
+   * - ``SigmaBackend``
+     - Base class for all backends
+   * - ``SigmaQueryExpression``
+     - Base class for query expressions
+   * - ``SigmaQueryExpressionTransformer``
+     - Transforms query expressions (e.g., to string)
+   * - ``SigmaConditionTranslator``
+     - Translates Sigma conditions to query expressions
+   * - ``SigmaRuleConverter``
+     - Converts parsed rules to query expressions
+   * - ``SigmaDetectionConverter``
+     - Converts detection items to query expressions
+   * - ``SigmaDetectionItemConverter``
+     - Converts individual detection items
+   * - ``SigmaFieldMapping``
+     - Handles field name mappings
+   * - ``SigmaValueConverter``
+     - Converts values (strings, numbers, etc.)
 
 Required Methods
 ****************

@@ -13,42 +13,103 @@ Transformations are defined in YAML pipelines and applied in order.
 Key Classes
 ***********
 
-| Class                              | Purpose                                      |
-|------------------------------------|----------------------------------------------|
-| `SigmaTransformation`            | Base class for all transformations           |
-| `SigmaRuleTransformation`        | Base class for rule-level transformations    |
-| `SigmaDetectionItemTransformation` | Base class for detection item transformations |
-| `SigmaFieldMappingTransformation`  | Base class for field mapping transformations |
+.. list-table::
+   :header-rows: 1
+   :widths: 45 55
+
+   * - Class
+     - Purpose
+   * - ``SigmaTransformation``
+     - Base class for all transformations
+   * - ``SigmaRuleTransformation``
+     - Base class for rule-level transformations
+   * - ``SigmaDetectionItemTransformation``
+     - Base class for detection item transformations
+   * - ``SigmaFieldMappingTransformation``
+     - Base class for field mapping transformations
 
 Available Transformation Types
 ******************************
 
-| Identifier                       | Class                              | Purpose                                      |
-|----------------------------------|------------------------------------|----------------------------------------------|
-| `field_name_mapping`             | `FieldNameMappingTransformation`   | Map field names                                |
-| `field_name_prefix`              | `FieldNamePrefixTransformation`    | Add prefix to field names                      |
-| `field_name_suffix`              | `FieldNameSuffixTransformation`    | Add suffix to field names                      |
-| `field_name_transform`           | `FieldNameTransformTransformation` | Apply function to field names                  |
-| `map_string`                     | `MapStringTransformation`          | Map string values                              |
-| `replace_string`                 | `ReplaceStringTransformation`      | Replace strings with regex                     |
-| `convert_type`                   | `ConvertTypeTransformation`        | Convert value types                            |
-| `set_value`                      | `SetValueTransformation`           | Set specific value                             |
-| `add_condition`                  | `AddConditionTransformation`       | Add detection condition                        |
-| `change_logsource`               | `ChangeLogsourceTransformation`    | Change log source                              |
-| `add_field`                      | `AddFieldTransformation`           | Add field to rule                              |
-| `remove_field`                   | `RemoveFieldTransformation`        | Remove field from rule                         |
-| `set_field`                      | `SetFieldTransformation`           | Set field value                                |
-| `set_state`                      | `SetStateTransformation`           | Set processing state                           |
-| `nest`                           | `NestTransformation`               | Group transformations                          |
-| `regex`                          | `RegexTransformation`              | Apply regex to field                           |
-| `drop_detection_item`            | `DropDetectionItemTransformation`  | Remove detection item                          |
-| `hashes_fields`                  | `HashesFieldsTransformation`       | Convert hash fields                            |
-| `wildcard_placeholders`          | `WildcardPlaceholdersTransformation` | Add wildcard placeholders                      |
-| `value_placeholders`             | `ValuePlaceholdersTransformation`  | Add value list placeholders                    |
-| `simple_template`                | `SimpleTemplateTransformation`     | Wrap query in template                         |
-| `template`                       | `TemplateTransformation`           | Custom query template                          |
-| `json`                           | `JsonTransformation`               | Export as JSON                                 |
-| `yaml`                           | `YamlTransformation`               | Export as YAML                                 |
+.. list-table::
+   :header-rows: 1
+   :widths: 25 40 35
+
+   * - Identifier
+     - Class
+     - Purpose
+   * - ``field_name_mapping``
+     - ``FieldNameMappingTransformation``
+     - Map field names
+   * - ``field_name_prefix``
+     - ``FieldNamePrefixTransformation``
+     - Add prefix to field names
+   * - ``field_name_suffix``
+     - ``FieldNameSuffixTransformation``
+     - Add suffix to field names
+   * - ``field_name_transform``
+     - ``FieldNameTransformTransformation``
+     - Apply function to field names
+   * - ``map_string``
+     - ``MapStringTransformation``
+     - Map string values
+   * - ``replace_string``
+     - ``ReplaceStringTransformation``
+     - Replace strings with regex
+   * - ``convert_type``
+     - ``ConvertTypeTransformation``
+     - Convert value types
+   * - ``set_value``
+     - ``SetValueTransformation``
+     - Set specific value
+   * - ``add_condition``
+     - ``AddConditionTransformation``
+     - Add detection condition
+   * - ``change_logsource``
+     - ``ChangeLogsourceTransformation``
+     - Change log source
+   * - ``add_field``
+     - ``AddFieldTransformation``
+     - Add field to rule
+   * - ``remove_field``
+     - ``RemoveFieldTransformation``
+     - Remove field from rule
+   * - ``set_field``
+     - ``SetFieldTransformation``
+     - Set field value
+   * - ``set_state``
+     - ``SetStateTransformation``
+     - Set processing state
+   * - ``nest``
+     - ``NestTransformation``
+     - Group transformations
+   * - ``regex``
+     - ``RegexTransformation``
+     - Apply regex to field
+   * - ``drop_detection_item``
+     - ``DropDetectionItemTransformation``
+     - Remove detection item
+   * - ``hashes_fields``
+     - ``HashesFieldsTransformation``
+     - Convert hash fields
+   * - ``wildcard_placeholders``
+     - ``WildcardPlaceholdersTransformation``
+     - Add wildcard placeholders
+   * - ``value_placeholders``
+     - ``ValuePlaceholdersTransformation``
+     - Add value list placeholders
+   * - ``simple_template``
+     - ``SimpleTemplateTransformation``
+     - Wrap query in template
+   * - ``template``
+     - ``TemplateTransformation``
+     - Custom query template
+   * - ``json``
+     - ``JsonTransformation``
+     - Export as JSON
+   * - ``yaml``
+     - ``YamlTransformation``
+     - Export as YAML
 
 Writing a Custom Transformation
 *******************************
