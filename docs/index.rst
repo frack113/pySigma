@@ -15,12 +15,16 @@ pySigma Documentation
    Sigma_Rules
    Processing_Pipelines
    Backends
+   Transformation_Cheat_Sheet
+   Conditions_Guide
    Rule_Validation
 
 .. toctree::
    :maxdepth: 1
    :caption: Advanced
 
+   Backend_Development
+   Transformation_Development
    Plugin_System
    Breaking_Changes
    Changelog
