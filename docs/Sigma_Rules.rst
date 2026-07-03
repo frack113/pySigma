@@ -26,12 +26,6 @@ A minimal Sigma rule looks like this:
            CommandLine|startswith: 'cmd.exe /c'
        condition: selection
 
-Parsing
-*******
-
-Programatic Construction
-************************
-
 Rule Collections
 ****************
 
