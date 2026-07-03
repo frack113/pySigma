@@ -1195,7 +1195,7 @@ class TextQueryBackend(Backend):
     field_equals_field_contains_expression: ClassVar[str | None] = None
 
     field_timestamp_part_expression: ClassVar[str | None] = None
-    """Expression for timestamp part modifiers like |minute, |day, etc."""
+    """Expression for timestamp part modifiers like ``|minute``, ``|day``, etc."""
 
     timestamp_part_mapping: ClassVar[dict[TimestampPart, str] | None] = None
     """Mapping to map a TimestampPart enum value to it's string representation of the target SIEM. Example value: '%M' for minute."""

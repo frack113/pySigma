@@ -99,3 +99,15 @@ autodoc_default_options = {
     "undoc-members": False,
     "inherited-members": False,
 }
+
+# Custom sidebars
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/scroll-end.html",
+        "sidebar_index.html",
+    ]
+}

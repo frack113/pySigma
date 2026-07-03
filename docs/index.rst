@@ -2,14 +2,14 @@ pySigma Documentation
 #####################
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
    :caption: Getting Started
 
    Quickstart
    YAML_Pipeline_Tutorial
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
    :caption: Core Concepts
 
    Sigma_Rules
@@ -20,7 +20,7 @@ pySigma Documentation
    Rule_Validation
 
 .. toctree::
-   :maxdepth: 1
+   :hidden:
    :caption: Advanced
 
    Backend_Development
@@ -121,10 +121,3 @@ The following example::
 
 Details about the conversion process can be found :doc:`here <Backends>`. Processing pipelines are
 described on :doc:`this page <Processing_Pipelines>`.
-
-Indices and tables
-******************
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
